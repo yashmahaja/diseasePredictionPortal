@@ -1,0 +1,36 @@
+
+.disclaimer{
+font-family: 'Microsoft Yi Baiti';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 160%;
+
+letter-spacing: 0.5px;
+
+color: #000000;
+}
+.disc{
+    font-family: 'Microsoft Yi Baiti';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 160%;
+    letter-spacing: 0.5px;  
+    color: #000000;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+.copy{
+    margin-top: 200px;
+    width: 1519px;
+    height: 500px;
+    background-color: rgb(238, 115, 63, 0.11);
+}
+.copy1{
+    width: 1507px;
+    height: 500px;
+    margin-left: 6px;
+    padding: 40px;
+  }

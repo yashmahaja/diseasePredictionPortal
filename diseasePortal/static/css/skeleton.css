@@ -1,0 +1,32 @@
+.welcome{
+    margin: 43px 0px 0px 56px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.btn{
+width: 226px;
+height: 86px;
+background: rgb(238,114,61);
+border-radius: 50px;
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+margin-top: 81px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+padding: 3px 0px 1px 8px;
+}
+.arrow{
+    margin: 0px 12px -3px 17px;
+}
+.skeleton{
+    margin-top: 91px;
+}

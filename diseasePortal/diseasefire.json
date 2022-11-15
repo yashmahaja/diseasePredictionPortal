@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "diseaseportal",
+  "private_key_id": "65e8ed8bad44bb330770f8868e807f4a65ba3dd4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCT91eCRG9STxwN\nCiyr0yi0iGctxW7KQSAu5hKHBUgLHhrl3BMEf61Fn5cFjDV2EoX3vt1qESoBbc9F\n2gTO3BKH1Kaz0HmKRsB7vHbkp56HWW2tpTmgdiwj8z6/pcNsQGUxYwTJjFIEVSrh\nWkuC9Zs9eQWKQV9WzTUpDCH2GBWpdlPirMVpAkwIaqlyx9CDeRb9cQXXnqw8Jos3\nX1wFGTrutfYQMtPceBjCdPkJ/+wGTH6kDqWHEQn6pMrEAJSCVVS+1p4wCqHBsEDq\nUXQr1Pk5R3tDsreMw1oWqZD2Y+ZIOYgOhRH6wrsD438uXI3Are2/6Bjmrjk5ZrWO\ngJO42qMRAgMBAAECggEAGY8RkiJxGkYpAcWepsWQU/L1462lcBFk1kUOsT0Dz0vR\neKAVtuK5Evw4sZAhEfasJnnVNEOnvlxx/85joznXh5f/fbMGs5B6IkWRQfkERLv5\nWpPeSu3uvP0A+0jOY24SLMA+bPQsnKv7frbCsWnseWdkwhd9uPg0dRUv7psFbuKK\n5sgLB3aHAhbUTwlVFptKv30F/d8GoMl0wKbfQio7nB7Zu4yE2SlOvrilRfqbbKdi\nCZxx4LjttAw/k10RErEhAhlh+LK3BtbdFbD0Gs5uVo7gTxpnOl5hdOXK6rb1Xg/Q\nIBq3kWJP65WfjOLeh+aTfq4p8mPtd9uHNvSwqLtleQKBgQDFt9x8kZITlWPZfsiT\nW8YQIZFFAJzE/KkSWWDNlrP/Vwh202rWS/zMPGlo/mfi05FgGrZ8ZPed5LCTFS83\nfS5pS7vgkEO+d+XMyHknfX7sNGGF13Xtv6BPMMu5t/mLDsN7hAxBOjnGS8AsX03R\nCUv23cdyca6XWk+sZtCzZjzJLQKBgQC/lRx5kBzvM1DXTj7k3zxov3QfhsMGidqV\nb/Pcr4MfP9XMV3LUPqwrZ61gSxikngEJdeWZZVWqy2LL4VKXcs1Oz0fr7JSignmT\nsywCYJmpuNTu9455Kl8NZtmsOIcBmBLIAvNjzsAgd9WkUfiOC+wO5LaWoy3KVRyY\n3cmBptFn9QKBgEWCXgFtK+22l2PfLqSfnwIMywV3MaYPLWFGCsI8OQuLjW445VZx\nYG5szqIazmrv9ivTOFSDKopX27vZtr/LQoXCGkrYbPiJLkDQOceoVvazc5WaKdtr\ngvBUN0sTYqeAiTjjM2u7DJSqDOWMm87hddNUJMoXLUoIdfomKzjmuHgBAoGAKwrR\nLu6V0Zfx3a2Sq9ELvWzmJf8c6ecm2NQiMb6s8uRgoFw1TEIYZFgSt8OncbSd/wYh\n42jE6m5vb+bbq3L7dW1Ud0jby/cMYYarqI0TePIxxM6Rj99ZI6Wr2emJS25jKdSf\n4hidSa4irZxM/3zmOCJic02OCBs/JYkOsLZN7dECgYB3BDt2nPE/ZJOpTyjUiYj7\no76IYVhG6XfTaQtimJ4zdM5YHybfU9wzt3V3W9dXZbHozlCkqu/Z2sayUN+XS/8t\nJGrq/N/z0cl0ajYU5AsFEzm2EFYsFRoCnUio9hCRwCGe6SEEdaKB8L7z19PvLBcL\ndKjZNn/adXo7ZWB85WLxRw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-62zjs@diseaseportal.iam.gserviceaccount.com",
+  "client_id": "113090822937386823534",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-62zjs%40diseaseportal.iam.gserviceaccount.com"
+}

@@ -1,0 +1,239 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="{% static '/css/results.css' %}">
+    <link rel="stylesheet" href="{% static '/css/final.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+        <!-- <button type = "button" class="logbuttons" onclick="location.href='{% url 'log' %}'">Logout</button> -->
+     <div class="impdiv">
+        <div class="sidebar">
+           <div class="line">
+            <div class="logo">
+              <img src="{% static '/images/logo.svg' %}">
+            </div>
+           </div>
+          <div class="vertical">
+            <div class="verdiv">
+              <img class="butn"  onclick="location.href=history.back()" src="{% static '/images/Union.svg' %}" width="24px" height="24px">
+              <img class="butn"  src="{% static '/images/dashboard.svg' %}" width="24px" height="24px">
+              <img class="butn"  src="{% static '/images/bug.svg' %}" width="24px" height="24px">
+              <img class="butn"  src="{% static '/images/category.svg' %}" width="24px" height="24px">
+              <img class="butn"  src="{% static '/images/group.svg' %}" width="24px" height="24px">
+              <img class="butn"  src="{% static '/images/settings.svg' %}" width="24px" height="24px">
+              <img class="buttn"  onclick="location.href='{% url 'log' %}'"  src="{% static '/images/exit1.svg' %}" width="24px" height="24px">
+            </div>
+          </div> 
+        </div>
+      <div class="maindiv">
+        <div class="cards">
+        <div class="card1">
+          <div class="names">
+            <img class="nam" src="{% static '/images/name.svg' %}" width="30px" height="30px">
+            <p class="name">{{name}}</p>
+            <p class="age">Age : {{age}}</p>
+          </div>
+            
+        </div>
+        <div class="card2">
+          <div class="speg">
+            <img class="sgs" src="{% static '/images/sg.svg' %}" width="30px" height="30px">
+            <p class="sg">Specific Gravity</p> 
+            <p class="sg1"> {{sg}} </p> 
+          </div>
+       
+        </div>
+        <div class="card3">
+          <div class="albu">
+            <img class="alm" src="{% static '/images/albumin.svg' %}" width="35px" height="35px">
+            <p class="al">Albumin</p> 
+            <p class="al1">{{al}}</p> 
+          </div>
+        </div>
+        <div class="card4">
+          <div class="rbc">
+            <img class="rbccs" src="{% static '/images/rbc.svg' %}" width="30px" height="30px">
+            <p class="haem">Haemoglobin</p>  
+            <p class="haem1">{{haem}}</p>
+          </div>
+        </div>
+        <div class="card5">
+          <div class="serum">
+            <img  class="sm"  src="{% static '/images/serum.svg' %}" width="32px" height="32px">
+            <p class="sc">S. Creatinine</p>
+            <p class="sc1">{{sc}}</p>
+          </div>
+         </div>
+        <div class="card6"> 
+          <div class="pcv">
+            <img class="pcvv" src="{% static '/images/pcv.svg' %}" width="32px" height="32px">
+            <p class="pcv">Packed Cell Volume</p>
+            <p class="pcv1">{{pcv}}</p>
+          </div>
+        </div>
+    </div>
+    <div class="cards2">
+        <div class="card7">
+          <div class="rbcc">
+            <img class="ironn" src="{% static '/images/iron.svg' %}" width="32px" height="32px">
+            <p class="rbccss">RBC's Count</p>
+            <p class="rbcc1">{{rbcc}}</p>
+          </div>
+        </div>
+        <div class="card8">
+          <div class="hten">
+            <img class="htnn" src="{% static '/images/htn.svg' %}" width="32px" height="32px">
+            <p class="htn">Hypertension</p>
+            <p class="htn1">{{htn}}</p>
+          </div>
+        </div>
+        <div class="card9">
+          <div class="diabetes">
+            <img class="diaa" src="{% static '/images/diabetes.svg' %}" width="32px" height="32px">
+            <p class="dia">Diabetes</p>
+            <p class="dia1">{{dia}}</p>
+          </div>
+        </div>
+    </div>
+      <div class="arrow">
+        <div id= slider class="outerbox">
+             <div class="innerbox active">
+                 <div class="flexit">
+                 <div class="cover">
+                     <div class="outerclrs">
+                         <div class="clr"></div>
+                         <p class="ckd">{{pred1}}%</p><p class="ckd1">CKD</p>
+                     </div>
+                     <div class="outerclrs2">
+                         <div class="clr2"></div>
+                         <p class="ckd2">{{pred}}%</p>
+                         <p class="ckd3">Not CKD</p>
+                     </div>
+                 </div>
+                 <div class="size">
+                     <canvas id="myChart"></canvas>
+                 </div> 
+             </div>
+             </div>
+             <div class="innerbox">
+              <p class="position">Final Possibility: </p>  
+              <p class="poss">{{value}}</p>
+              <span id="dotss" class="dots"></span>
+              <p class="nb" >Naive Bayes</p>  
+              <span id="dotss1" class="dots1"></span>
+              <p class="nb1" >K Nearest Neighbour</p>  
+              <span id="dotss2" class="dots2"></span>
+              <p class="nb2" >Decision Tree</p>  
+              <span id="dotss3" class="dots3"></span>
+              <p class="nb3" >Support Vector Machine</p>  
+              <span id="dotss4" class="dots4"></span>
+              <p class="nb4" >Logistic Regression</p>  
+              <span id="dotss5" class="dots5"></span>
+              <p class="nb5" >Random Forest</p> 
+                     <div class="size1">
+                         <canvas id="barChart"></canvas>
+                     </div>  
+             </div>
+             <div  class="sub_div">
+                 <span id="left-arrow" class="dot"></span>
+                 <!-- <span id="right-arrow" class="dot"></span> -->
+             </div>
+         </div>
+       
+     </div>
+         
+         
+     <script>
+         const ctx = document.getElementById('barChart').getContext('2d');
+         const barChart = new Chart(ctx, {
+             type: 'bar',
+             data: {
+                 labels: ['Naive Bayes', 'K Nearest Neighbour', 'Decision Tree', 'Support Vector Machine', 'Logistic Regression','Random Forest'],
+                 datasets: [{
+                     label: 'Output of ML Models',
+                     data: {{predss}},
+                     backgroundColor: [
+                         'rgba(255, 99, 132, 0.2)',
+                         'rgba(54, 162, 235, 0.2)',
+                         'rgba(255, 206, 86, 0.2)',
+                         'rgba(75, 192, 192, 0.2)',
+                         'rgba(153, 102, 255, 0.2)',
+                         'rgba(255, 159, 64, 0.2)'
+                     ],
+                     borderColor: [
+                         'rgba(255, 99, 132, 1)',
+                         'rgba(54, 162, 235, 1)',
+                         'rgba(255, 206, 86, 1)',
+                         'rgba(75, 192, 192, 1)',
+                         'rgba(153, 102, 255, 1)',
+                         'rgba(255, 159, 64, 1)'
+                     ],
+                     borderWidth: 1
+                 }]
+             },
+             options: {
+              legend: {
+        display: false,
+      },
+                 scales: {
+                     x:{
+                         grid :{
+                             drawOnChartArea: false
+                         },
+              ticks: {
+               display: false
+        }
+                     },
+                     y: {
+                         beginAtZero: true,
+                         grid : {
+                             drawOnChartArea: false
+                         }
+     
+                     }
+                 }
+             }
+         });
+         </script>
+     
+     
+      
+         <script>
+             const data = {
+      
+         datasets: [{
+           data: {{data}},
+           backgroundColor: [
+             'hsl(223, 93%, 55%)',
+             'hsl(223, 92%, 90%)'
+           ],
+           borderRadius: 15,
+           spacing: 8,
+           hoverOffset: 4
+         }]
+        };
+              
+                const config = {
+                  type: 'doughnut',
+                  data: data,
+                  options: {}
+                };
+            </script>
+      <script>
+          const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+          );
+        </script>
+    </div>
+  </div>
+  <script src="{% static '/js/jquery.js' %}"></script>
+   <script src="{% static '/js/function.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+.abouts{
+    width: 80.6vw;
+}
+.about_text{
+margin-top: 96px;
+margin-bottom: 96px;
+display: inline-block;
+white-space: pre-wrap;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 160%;
+letter-spacing: 0.5px;
+color: #383C3E;
+}
+
+
+
+
+.our_team{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 160%;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.5px;
+color: rgb(4, 42, 115);
+margin-bottom: 50px;
+}
+.team{
+    display: flex;
+    justify-content: center;
+}
+.circles{
+    display:  flex;
+    justify-content: space-around;
+}
+.circle1{
+    background-color: grey;
+    /* background-image: red; */
+    width: 231px;
+    height: 231px;
+    border-radius: 50%;
+    border: 2px solid grey;
+    /* box-shadow: 0px 0px 10px grey; */
+}
+.circle2{
+    background-color: grey;
+    /* background-image: red; */
+    width: 231px;
+    height: 231px;
+    border-radius: 50%;
+    border: 2px solid grey;
+    /* box-shadow: 0px 0px 10px grey; */
+    margin-left: 90px;
+    margin-top: 44px;
+    
+}
+/* .textcircle{ */
+    /* width: 264px; */
+    /* height: 72px; */
+    /* background-color: yellow; */
+/* } */
+
+.intro{
+    margin-top: 2%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.intro2{
+    margin-top: 2%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.textcir2{
+    max-width: 204px;
+    white-space: pre-wrap;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 160%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #000000;
+    justify-content: center;
+    margin-left: 12px;
+    margin-top: 235px;
+}
+
+.textcir{
+    max-width: 204px;
+    white-space: pre-wrap;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 160%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #000000;
+    justify-content: center;
+    margin-left: 12px;
+    margin-top: 235px;
+}
+.circless{
+    display:  flex;
+    margin-top: 135px;
+    width: 820px;
+    height: 305px;
+    justify-content: space-around;
+}
+.circless2{
+    display:  flex;
+    margin-top: 135px;
+    width: 820px;
+    height: 305px;
+}
+
+
+.social{
+height: 172px;
+display: flex;
+justify-content: center;
+margin-top: 59px;
+}
+.socials_prof_text{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 160%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: rgb(4, 42, 115);
+    
+}
+/* .handles{
+    width: 45vw;
+    margin-left: 235px;
+    display: flex;
+    justify-content: space-between;
+} */
+
+.social_media{
+display: flex;
+justify-content: space-around;
+/* background-color: yellow; */
+width: 686px;
+margin-left: 271px;
+}
+.handles{
+    background-color: grey;
+    background-image: red;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid grey;
+    /* box-shadow: 0px 0px 10px grey; */
+}
+
+.fb{
+    padding: 13px;
+}
+.in{
+    padding: 5px 8px 0px 13px;
+}
+.lin{
+    padding: 13px;
+}
+.tw{
+    padding: 15px 0px 0px 15px;
+}
+.wp{
+    padding: 13px;
+}
+.you{
+    padding: 13px;
+}

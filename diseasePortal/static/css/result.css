@@ -1,0 +1,9 @@
+.maindiv{
+    display: flex;
+    /* background-color: green; */
+}
+.information{
+    width: 50%;
+    margin: 8px 0px 0px 17px;
+}
+

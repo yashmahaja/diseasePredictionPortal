@@ -1,0 +1,305 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disease Portal</title>
+  <style>
+    .logbuttons {
+    position: absolute;
+    top: 30px;
+    right: 21px;
+    background-color: rgb(238,114,61);
+    border: 2px solid white;
+    color: white;
+    padding: 8px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 1px 7px 10px rgba(0, 0, 0, 0.1);
+}
+.subbutton{
+    position: absolute;
+    background-color: rgb(238,114,61);
+    border: 2px solid white;
+    color: white;
+    padding: 8px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 1px 7px 10px rgba(0, 0, 0, 0.1);
+}
+button:hover{
+background-color: rgb(226, 98, 43);
+}
+a:link, a:visited {
+color: white;
+text-decoration: none;
+}
+.save{
+    position: absolute;
+    background-color: rgb(238,114,61);
+    border: 2px solid white;
+    color: white;
+    padding: 8px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 1px 7px 10px rgba(0, 0, 0, 0.1);
+}
+
+  </style>
+  <!-- <link rel="stylesheet" href="{% static '/css/sign.css' %}"> -->
+<link rel="stylesheet" type="text/css"  href="{% static '/css/style.css' %}">
+<link rel="stylesheet" type="text/css"  href="{% static '/css/skeleton.css' %}">
+<link rel="stylesheet" type="text/css"  href="{% static '/css/features.css' %}">
+<link rel="stylesheet" type="text/css"  href="{% static '/css/about.css' %}">
+<link rel="stylesheet" type="text/css"  href="{% static '/css/foot.css' %}">
+<link rel="stylesheet" type="text/css"  href="{% static '/css/research.css' %}">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>  
+<body>
+    <div class="welcome">
+      Welcome {{e}}!
+    </div>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      offset: 130,
+      duration: 1000
+    });
+  </script>
+
+  <script>
+      $(document).on('submit','#todo',function(e)
+{
+e.preventDefault();
+$.ajax({
+type:'POST',
+url:'/',
+data:{
+name:$("#name").val(),
+email:$("#email").val(),
+country:$("#country").val(),
+age:$("#age").val(),
+albumin:$("#albumin").val(),
+sc:$("#sc").val(),
+diabetes:$("#diabetes").val(),
+hypertension:$("#hypertension").val(),
+haemo:$("#haemo").val(),
+pcv:$("#pcv").val(),
+rbcc:$("#rbcc").val(),
+bg:$("#bg").val(),
+sg:$("#sg").val()
+},
+success:function()
+{
+
+console.log("success")
+}
+})
+});
+
+
+function selectyes() 
+{
+   console.log("Yes");
+    document.getElementById("diabetes").value = "1";
+    document.getElementById("dropdownvalue").innerHTML= "Yes";
+}
+function selectno() 
+{
+console.log("No");
+    document.getElementById("diabetes").value = "0";
+    document.getElementById("dropdownvalue").innerHTML= "No";
+
+}
+
+function selectyes1() 
+{
+   console.log("Yes");
+    document.getElementById("hypertension").value = "1";
+    document.getElementById("dropdownvalue1").innerHTML= "Yes";
+}
+function selectno1() 
+{
+console.log("No");
+    document.getElementById("hypertension").value = "0";
+    document.getElementById("dropdownvalue1").innerHTML= "No";
+
+}
+
+  </script>
+<div class="skeleton">
+  <div data-aos="fade-in" class="box">
+      <p class="text">Assisting doctors in every possible way for saving those<br>invaluable live's!</p>
+  </div>
+
+
+  <div class="box2">
+
+      <form action="{% url 'result' %}"  id="todo" >
+       {% csrf_token %}
+      <div class="wrapper">
+          <div data-aos="fade-right" class="input-data">
+              <input type="text" name="name" id="name">
+              <div class="underline"></div>
+              <label>Name</label>
+          </div>
+          <div data-aos="fade-right" class="input-data">
+              <input type="text" name="email" id="email">
+              <div class="underline"></div>
+              <label>Email</label>
+          </div>
+          <div class="outer">
+              <div data-aos="fade-right" class="inner1">
+                  <input type="text1" name="country"  id="country">
+                  <div class="underline1"></div>
+                  <label>Country</label>
+              </div>
+              <div data-aos="fade-left" class="inner2">
+                  <input type="text2" name="age" id="age">
+                  <div class="underline"></div>
+                  <label>Age</label>
+              </div>
+          </div>
+          <div data-aos="fade-right" class="input-data">
+              <input type="text" name="albumin" id="albumin">
+              <div class="underline"></div>
+              <label>Albumin</label>
+          </div>
+          <div data-aos="fade-right" class="input-data">
+              <input type="text" name="sc"  id="sc">
+              <div class="underline"></div>
+              <label>Serum Creatinine</label>
+          </div>
+          <div class="drops">
+              <div data-aos="fade-right" class="dropdown">
+                  <label>Diabetes Mellitus</label>
+                  <div class="dropdown-select">
+                      <span class="select" id="dropdownvalue">None</span>
+                      <img src="{% static '/images/Chevron.svg' %}" alt="">
+                  </div>
+                  <div class="dropdownlist">
+                      <input name="diabetes"  type="hidden" placeholder="dropdown" type="text" id="diabetes" />
+                      <div class="dropdown-list_items" onclick="selectyes()">Yes</button></div>
+                      <div class="dropdown-list_items"  onclick="selectno()" >No</div>
+                  </div>
+              </div>
+              <div data-aos="fade-left" class="dropdown">
+                  <label>Hypertension</label>
+                  <div class="dropdown-select">
+                      <span class="select" id="dropdownvalue1">None</span>
+                      <img src="{% static '/images/Chevron.svg' %}" alt="">
+                  </div>
+
+                  <div class="dropdownlist">
+                      <input name="hypertension" type="hidden" placeholder="hypertension" type="text" id="hypertension" />
+                      <div class="dropdown-list_items" onclick="selectyes1()">Yes</div>
+                      <div class="dropdown-list_items" onclick="selectno1()">No</div>
+                  </div>
+              </div>
+          </div>          
+          <div data-aos="fade-right" class="input-data">
+              <input type="text" name="haemo"  id="haemo">
+              <div class="underline"></div>
+              <label>Haemoglobin</label>
+          </div>
+          <div  data-aos="fade-right" class="input-data">
+              <input type="text" name="pcv" id="pcv">
+              <div class="underline"></div>
+              <label>Packed Cell Volume</label>
+          </div>
+          <div  data-aos="fade-right" class="input-data">
+              <input type="text" name="rbcc" id="rbcc">
+              <div class="underline"></div>
+              <label>Red Blood Cell Count</label>
+          </div>
+          <div data-aos="fade-right" class="input-data">
+              <input type="text" name="sg" id="sg">
+              <div class="underline"></div>
+              <label>Specific Gravity</label>
+          </div>
+          <button data-aos="fade-right" name="submitform" type="submit" style="border: none; background-color: #FFFFFFFF;">
+              <img  src="{% static '/images/Button.svg' %}" alt="" />
+          </button>
+      </div>
+
+  </form>
+
+      <div class="wrapper2">
+              <p data-aos="fade-left" class="text_abs">Abstract</p>
+              <p data-aos="fade-left" class="abs">Chronic Kidney Disease (CKD), also known as chronic renal disease, has become a serious public health concern with  a constant increase in incidence. A person can only survive for 18 days without their kidneys, resulting in a high demand for kidney transplants and dialysis. A typical method for CKD prediction is to use machine learning algorithms on a medical database. This study presents a workflow for gathering datasets, incorporating data prepossessing, addressing missing values, and selecting features. To anticipate the accuracy, relevant features are separated into a train-test ratio and various machine learning methods are performed. The final result indicates whether or not the person has CKD.</p>
+              <div data-aos="fade-left" class="enq">
+                  <p class="enquiry">For Quick Inquires</p>
+              </div>
+              <div data-aos="fade-left" class="contact">
+                  <div class="flag">
+                      <img src="{% static '/images/Vector.svg' %}" alt="">
+                  </div>
+                  <div class="phn">
+                      <p class="phn">+91 3333333330</p>
+                  </div>
+              </div>
+              <div data-aos="fade-left" class="contact">
+                  <div class="flag">
+                      <img src="{% static '/images/Vector.svg' %}" alt="">
+                  </div>
+                  <div class="phn">
+                      <p class="phn">+91 2222222225</p>
+                  </div>
+              </div>
+              <div class="newsletter">
+                  <p data-aos="fade-left" class="news">Upload the report!</p>
+
+                      <div class="input-pdf">  
+                     
+                        <form  method="POST" action="{% url 'upresult' %}" class="post-form"  enctype="multipart/form-data">  
+                            {% csrf_token %}  
+                           <p>
+                           <label class="buttonupload" for="id_file">
+                            Select File
+                            <input id="id_file" type="file" name="file" required="" hidden/>
+                        </label>
+                        <span id="Filename">No file chosen</span>
+                    </p>
+                            <button type="submit"  class="save">Save</button>  
+                    </form>  
+                      </div>
+
+                      <script>
+                        let input = document.getElementById("id_file");
+                        let Filename = document.getElementById("Filename")
+                
+                        input.addEventListener("change", ()=>{
+                            let inputFile = document.querySelector("input[type=file]").files[0];
+                            Filename.innerText = inputFile.name;
+                        })
+                    </script>
+
+                  </div>
+              </div>
+      </div>
+  </div>
+<div class="copy">
+  <div class="copy1">
+  <p class="disc">  DISCLAIMER: Copyright © 2022 ____________ All rights</p>
+  <p class="disclaimer">Copyright Disclaimer under Section 107 of the copyright act 1976, allowance is made for fair use for purposes such as criticism, comment, news reporting, scholarship, and research. Fair use is a use permitted by copyright statute that might otherwise be infringing. Non-profit, educational or personal use tips the balance in favour of fair use. This website may contain proprietary or legally privileged information. In case you are not the original intended Recipient of the website, you must not, directly or indirectly, use, disclose, distribute, print, or copy any part of this website. Any views expressed in this website are those of the individual organization unless otherwise stated. Nothing contained in this website shall be construed as an offer or acceptance of any offer by ______ unless sent with that express intent and with due authority of ________ has taken enough precautions to prevent the spread of viruses. However the Trust accepts no liability for any damage caused by any virus transmitted by this website.</p>
+</div>
+</div>
+</body>
+</html>
