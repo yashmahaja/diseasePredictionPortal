@@ -15,7 +15,6 @@ from .forms import StudentForm
 import re
 
 
-
 config = {
   'apiKey': "AIzaSyBKD1ME4nuheRuVpQfzwb9Vrp8nqgJ0yRg",
   'authDomain': "diseaseportal.firebaseapp.com",
@@ -85,6 +84,7 @@ def uploadresult(request):
                 htn = int(i[8])
                 dia = int(i[9])
                 prob_percent_0 = float(i[10])
+                global prob_percent_1 
                 prob_percent_1 = float(i[11])
                 labels = ["NOT CKD","CKD"]
                 data = [prob_percent_0,prob_percent_1]
@@ -146,7 +146,9 @@ def uploadresult(request):
             'packedCellVolume': pcv,
             'redBloodCellCount': rbcc,
             'hypertension': res,
-            'diabetes': res1
+            'diabetes': res1,
+             'pred': prob_percent_0,
+            'pred1': prob_percent_1,
             }
                 db.collection('data').document().set(datas)
                 idtoken = request.session['uid']
@@ -207,6 +209,7 @@ def result(request):
         value = "Strongly Negative"
     p = list(np.array(pred)[0])
     prob_percent_0 = round(p[0]*100,2)
+    global prob_percent_1
     prob_percent_1 = round(p[1]*100,2)
     labels = ["NOT CKD","CKD"]
     data = [prob_percent_1,prob_percent_0]
@@ -250,8 +253,9 @@ def result(request):
         'packedCellVolume': pcv,
         'redBloodCellCount': rbcc,
         'hypertension': res,
-        'diabetes': res1
-
+        'diabetes': res1,
+         'pred': prob_percent_0,
+        'pred1': prob_percent_1
     }
     db.collection('data').document().set(datas)
     idtoken = request.session['uid']
@@ -263,3 +267,9 @@ def result(request):
     template = 'result.html'
     return render(request,template,context)
 
+def fdata(request):
+    patients = db.collection('data').where("pred1", "==", prob_percent_1).limit(5).get()
+    context = {
+        'patients': [patient.to_dict() for patient in patients],
+    }
+    return render(request,"data.html",context)

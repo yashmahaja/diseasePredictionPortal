@@ -4,7 +4,7 @@ import numpy as np
 import joblib
 import os
 import filetype
-model = joblib.load('D:/Propy/Django/diseasePortal/rf.pkl')
+model = joblib.load('rf.pkl')
 def handle_uploaded_file(f):  
     with open('diseasePortal/static/uploads/'+f.name, 'wb+') as destination:  
         for chunk in f.chunks():  

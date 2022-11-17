@@ -25,5 +25,6 @@ path('admin/', admin.site.urls),
    path('result/', views.uploadresult, name="upresult"),
    path('results/',views.result, name="result"),  
    path('logout/',views.logout, name="log"),
+   path('data/',views.fdata, name="similar"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -1,0 +1,52 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+    <link rel="stylesheet" href="{% static '/css/results.css' %}">
+    <link rel="stylesheet" href="{% static '/css/final.css' %}">
+    <link rel="stylesheet" href="{% static '/css/data.css' %}">
+</head>
+<body>
+    <div class="imp">
+    <div class="sidebar">
+        <div class="line">
+         <div class="logo">
+           <img src="{% static '/images/logo.svg' %}">
+         </div>
+        </div>
+       <div class="vertical">
+         <div class="verdiv">
+           <img class="butn"  onclick="location.href=history.back()" src="{% static '/images/Union.svg' %}" width="24px" height="24px">
+           <img class="butn"  onclick="location.href='{% url 'similar' %}'"   src="{% static '/images/history.svg' %}" width="24px" height="24px">
+           <img class="butn"  src="{% static '/images/bug.svg' %}" width="24px" height="24px">
+           <img class="butn"  src="{% static '/images/category.svg' %}" width="24px" height="24px">
+           <img class="butn"  src="{% static '/images/group.svg' %}" width="24px" height="24px">
+           <img class="butn"  src="{% static '/images/settings.svg' %}" width="24px" height="24px">
+           <img class="buttn"  onclick="location.href='{% url 'log' %}'"  src="{% static '/images/exit1.svg' %}" width="24px" height="24px">
+         </div>
+       </div> 
+     </div>
+     <div class="fdata">
+        {% for patient_obj in patients %}
+        <tr>
+            <td>Specific Gravity: {{patient_obj.specificGravity}}</td>  <br>
+            <td>Albumin: {{patient_obj.albumin}}</td>  <br>
+            <!-- <td>{{patient_obj.haemoglobin}}</td>  <br>
+            <td>{{patient_obj.serumCreatinine}}</td>  
+            <td>{{patient_obj.packedCellVolume}}</td>  
+            <td>{{patient_obj.redBloodCellCount}}</td>  
+            <td>{{patient_obj.hypertension}}</td>  
+            <td>{{patient_obj.diabetes}}</td>  -->
+            <td>Probability: {{patient_obj.pred1}} %</td> <br>
+            <br>
+            <td></td>
+        </tr>
+        {% endfor %}  
+     </div> 
+    </div>
+</body>
+</html>
